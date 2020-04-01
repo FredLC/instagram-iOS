@@ -9,11 +9,12 @@
 import UIKit
 import Firebase
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     let plusPhotoButton: UIButton = {
         let button = UIButton(type: .system)
         button.setImage(#imageLiteral(resourceName: "plus_photo"), for: .normal)
+        button.addTarget(self, action: #selector(handlePlusPhoto), for: .touchUpInside)
         return button
     }()
     
@@ -62,6 +63,27 @@ class ViewController: UIViewController {
         return button
     }()
     
+    @objc func handlePlusPhoto() {
+        let imagePickerController = UIImagePickerController()
+        imagePickerController.delegate = self
+        imagePickerController.allowsEditing = true
+        present(imagePickerController, animated: true, completion: nil)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        
+        if let editedImage = info[UIImagePickerController.InfoKey.editedImage] as? UIImage {
+            plusPhotoButton.setImage(editedImage.withRenderingMode(.alwaysOriginal), for: .normal)
+        } else if let originalImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+            plusPhotoButton.setImage(originalImage.withRenderingMode(.alwaysOriginal), for: .normal)
+        }
+        
+        plusPhotoButton.layer.cornerRadius = plusPhotoButton.frame.width/2
+        plusPhotoButton.layer.masksToBounds = true
+        
+        dismiss(animated: true, completion: nil)
+    }
+    
     @objc func handleTextInputChange() {
         let isFormValid = emailTextField.text?.count ?? 0 > 0 && usernameTextField.text?.count ?? 0 > 0 && passwordTextField.text?.count ?? 0 > 0
         
@@ -79,15 +101,57 @@ class ViewController: UIViewController {
         guard let username = usernameTextField.text, usernameTextField.text?.isEmpty != true else { return }
         guard let password = passwordTextField.text, passwordTextField.text?.isEmpty != true else { return }
         
-        Auth.auth().createUser(withEmail: email, password: password) { (user, error) in
+        Auth.auth().createUser(withEmail: email, password: password) { (result, error) in
             if let err = error {
                 print("Something went wrong:", err)
                 return
             }
-            print("Successfully created user:", user)
+            print("Successfully created user:", result?.user.uid)
+            
+            guard let image = self.plusPhotoButton.imageView?.image else { return }
+            guard let uploadData = image.jpegData(compressionQuality: 0.3) else { return }
+            
+            let filename = NSUUID().uuidString
+            let storageRef = Storage.storage().reference().child("profile_images").child(filename)
+            
+            storageRef.putData(uploadData, metadata: nil, completion: { (metadata, error) in
+                
+                if let err = error {
+                    print("Failed to upload profile image: ", err)
+                    return
+                }
+                
+                storageRef.downloadURL(completion: { (downloadUrl, error) in
+                    
+                    if let err = error {
+                        print("Failed to retrieve download url: ", err)
+                        return
+                    }
+                    
+                    guard let profileImageUrl = downloadUrl?.absoluteString else { return }
+                    
+                    print("Successfully uploaded profile image", profileImageUrl)
+                    
+                    guard let uid = result?.user.uid else { return }
+                    
+                    let dictionaryValues = ["username": username, "profile_image": profileImageUrl]
+                    let values = [uid: dictionaryValues]
+                    
+                    Database.database().reference().child("users").updateChildValues(values, withCompletionBlock: { (error, ref) in
+                        if let err = error {
+                            print("Failed to save user in db:", err)
+                            return
+                        }
+                        
+                        print("Successfully saved user in db")
+                    })
+                })
+                
+            })
+            
         }
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.addSubview(plusPhotoButton)
@@ -103,13 +167,13 @@ class ViewController: UIViewController {
         stackView.distribution = .fillEqually
         stackView.axis = .vertical
         stackView.spacing = 10
-    
+        
         view.addSubview(stackView)
         
         stackView.anchor(top: plusPhotoButton.bottomAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, paddingTop: 30, paddingLeft: 40, paddingBottom: 0, paddingRight: 40, width: 0, height: 200)
     }
-
-
+    
+    
 }
 
 extension UIView {
