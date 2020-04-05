@@ -123,7 +123,8 @@ class SignUpController: UIViewController, UIImagePickerControllerDelegate, UINav
                 print("Something went wrong:", err)
                 return
             }
-            print("Successfully created user:", result?.user.uid)
+            
+            print("Successfully registered user: ", result?.user.uid ?? "")
             
             guard let image = self.plusPhotoButton.imageView?.image else { return }
             guard let uploadData = image.jpegData(compressionQuality: 0.3) else { return }
@@ -161,6 +162,12 @@ class SignUpController: UIViewController, UIImagePickerControllerDelegate, UINav
                         }
                         
                         print("Successfully saved user in db")
+                        
+                        guard let mainTabBarController = UIApplication.shared.keyWindow?.rootViewController as? MainTabBarController else { return }
+                        
+                        mainTabBarController.setupViewControllers()
+                        
+                        self.dismiss(animated: true, completion: nil)
                     })
                 })
                 
