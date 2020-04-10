@@ -10,6 +10,7 @@
 		3AD5D4B3F19623D47933C87A /* Pods_InstagramFirebase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F56B73E82C911DF2775E547 /* Pods_InstagramFirebase.framework */; };
 		48034EC82436BD9B0035D3A4 /* UserProfileHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48034EC72436BD9B0035D3A4 /* UserProfileHeader.swift */; };
 		4827C504243BDEEB001567CC /* PhotoSelectorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4827C503243BDEEB001567CC /* PhotoSelectorController.swift */; };
+		4840139824411D1600A39268 /* PhotoSelectorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4840139724411D1600A39268 /* PhotoSelectorCell.swift */; };
 		4841832524355DBD005B16CA /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4841832424355DBD005B16CA /* MainTabBarController.swift */; };
 		4841832724355F61005B16CA /* UserProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4841832624355F61005B16CA /* UserProfileController.swift */; };
 		48941BFB243A51BC00B95CA6 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48941BFA243A51BC00B95CA6 /* LoginController.swift */; };
@@ -26,6 +27,7 @@
 		2B56539A2B4F9EFBB0D96539 /* Pods-InstagramFirebase.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstagramFirebase.debug.xcconfig"; path = "Target Support Files/Pods-InstagramFirebase/Pods-InstagramFirebase.debug.xcconfig"; sourceTree = "<group>"; };
 		48034EC72436BD9B0035D3A4 /* UserProfileHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileHeader.swift; sourceTree = "<group>"; };
 		4827C503243BDEEB001567CC /* PhotoSelectorController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoSelectorController.swift; sourceTree = "<group>"; };
+		4840139724411D1600A39268 /* PhotoSelectorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoSelectorCell.swift; sourceTree = "<group>"; };
 		4841832424355DBD005B16CA /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		4841832624355F61005B16CA /* UserProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileController.swift; sourceTree = "<group>"; };
 		48941BFA243A51BC00B95CA6 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
@@ -76,6 +78,7 @@
 			isa = PBXGroup;
 			children = (
 				4827C503243BDEEB001567CC /* PhotoSelectorController.swift */,
+				4840139724411D1600A39268 /* PhotoSelectorCell.swift */,
 			);
 			path = "Add Photo";
 			sourceTree = "<group>";
@@ -258,6 +261,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				48BDD1572434EECC008B0912 /* SignUpController.swift in Sources */,
+				4840139824411D1600A39268 /* PhotoSelectorCell.swift in Sources */,
 				48BDD1682434FFE8008B0912 /* Extensions.swift in Sources */,
 				4841832524355DBD005B16CA /* MainTabBarController.swift in Sources */,
 				48034EC82436BD9B0035D3A4 /* UserProfileHeader.swift in Sources */,
