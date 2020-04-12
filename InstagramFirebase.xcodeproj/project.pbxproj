@@ -15,6 +15,7 @@
 		4841832724355F61005B16CA /* UserProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4841832624355F61005B16CA /* UserProfileController.swift */; };
 		48941BFB243A51BC00B95CA6 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48941BFA243A51BC00B95CA6 /* LoginController.swift */; };
 		4895D50824351D4A00CB2F25 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4895D50724351D4900CB2F25 /* GoogleService-Info.plist */; };
+		48A95FE32442708700895419 /* SharePhotoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A95FE22442708700895419 /* SharePhotoController.swift */; };
 		48BDD1552434EECC008B0912 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48BDD1542434EECC008B0912 /* AppDelegate.swift */; };
 		48BDD1572434EECC008B0912 /* SignUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48BDD1562434EECC008B0912 /* SignUpController.swift */; };
 		48BDD15A2434EECC008B0912 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48BDD1582434EECC008B0912 /* Main.storyboard */; };
@@ -32,6 +33,7 @@
 		4841832624355F61005B16CA /* UserProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileController.swift; sourceTree = "<group>"; };
 		48941BFA243A51BC00B95CA6 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		4895D50724351D4900CB2F25 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		48A95FE22442708700895419 /* SharePhotoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharePhotoController.swift; sourceTree = "<group>"; };
 		48BDD1512434EECC008B0912 /* InstagramFirebase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InstagramFirebase.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		48BDD1542434EECC008B0912 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		48BDD1562434EECC008B0912 /* SignUpController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpController.swift; sourceTree = "<group>"; };
@@ -79,6 +81,7 @@
 			children = (
 				4827C503243BDEEB001567CC /* PhotoSelectorController.swift */,
 				4840139724411D1600A39268 /* PhotoSelectorCell.swift */,
+				48A95FE22442708700895419 /* SharePhotoController.swift */,
 			);
 			path = "Add Photo";
 			sourceTree = "<group>";
@@ -264,6 +267,7 @@
 				4840139824411D1600A39268 /* PhotoSelectorCell.swift in Sources */,
 				48BDD1682434FFE8008B0912 /* Extensions.swift in Sources */,
 				4841832524355DBD005B16CA /* MainTabBarController.swift in Sources */,
+				48A95FE32442708700895419 /* SharePhotoController.swift in Sources */,
 				48034EC82436BD9B0035D3A4 /* UserProfileHeader.swift in Sources */,
 				4841832724355F61005B16CA /* UserProfileController.swift in Sources */,
 				48BDD1552434EECC008B0912 /* AppDelegate.swift in Sources */,
