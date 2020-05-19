@@ -24,6 +24,7 @@
 		48BDD15C2434EECE008B0912 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 48BDD15B2434EECE008B0912 /* Assets.xcassets */; };
 		48BDD15F2434EECE008B0912 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48BDD15D2434EECE008B0912 /* LaunchScreen.storyboard */; };
 		48BDD1682434FFE8008B0912 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48BDD1672434FFE8008B0912 /* Extensions.swift */; };
+		48FF5D4624743E940009CC5D /* CustomImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FF5D4524743E940009CC5D /* CustomImageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		48BDD15E2434EECE008B0912 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		48BDD1602434EECE008B0912 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		48BDD1672434FFE8008B0912 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		48FF5D4524743E940009CC5D /* CustomImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomImageView.swift; sourceTree = "<group>"; };
 		9F56B73E82C911DF2775E547 /* Pods_InstagramFirebase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InstagramFirebase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0E2CAA830CFEECC4B6AF96E /* Pods-InstagramFirebase.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstagramFirebase.release.xcconfig"; path = "Target Support Files/Pods-InstagramFirebase/Pods-InstagramFirebase.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -149,6 +151,7 @@
 			isa = PBXGroup;
 			children = (
 				48BDD1672434FFE8008B0912 /* Extensions.swift */,
+				48FF5D4524743E940009CC5D /* CustomImageView.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -289,6 +292,7 @@
 				48941BFB243A51BC00B95CA6 /* LoginController.swift in Sources */,
 				4827C504243BDEEB001567CC /* PhotoSelectorController.swift in Sources */,
 				489AAB7F2443D1D00018CB8B /* UserProfilePhotoCell.swift in Sources */,
+				48FF5D4624743E940009CC5D /* CustomImageView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
